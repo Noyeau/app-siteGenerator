@@ -1,0 +1,15 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>{{bloc.type}}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-item>
+      <ion-input style="width: 100%;" [(ngModel)]="bloc.data"></ion-input>
+    </ion-item>
+  </ion-card-content>
+  <ion-thumbnail *ngIf="!display" (click)="display = !display">
+    <img [src]="bloc?.data">
+  </ion-thumbnail>
+  <ion-img *ngIf="display" (click)="display = !display" [src]="bloc?.data"></ion-img>
+</ion-card>

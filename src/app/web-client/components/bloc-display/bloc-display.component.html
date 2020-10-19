@@ -1,0 +1,22 @@
+
+
+<ng-container *ngFor="let bloc of blocs; let i = index">
+  <ng-container *ngIf="i < count">
+    <ng-container [ngSwitch]="bloc.type">
+      <app-wc-header class="bloc-site" *ngSwitchCase="'header'" duration="1s" [data]="bloc.data">
+      </app-wc-header>
+      <app-wc-text class="bloc-site" *ngSwitchCase="'text'" [data]="bloc.data"></app-wc-text>
+      <app-wc-image class="bloc-site" *ngSwitchCase="'image'" [data]="bloc.data"></app-wc-image>
+      <app-wc-timeline class="bloc-site" *ngSwitchCase="'timeline'" [data]="bloc.data" [title]="bloc.title"></app-wc-timeline>
+      <app-wc-timeline-line class="bloc-site" *ngSwitchCase="'timeline-line'" ></app-wc-timeline-line>
+
+      <app-bloc-display-rsvp class="bloc-site" *ngSwitchCase="'rsvp-bloc'" [bloc]="bloc" [userDataBloc]="getDataBloc(bloc.code)"></app-bloc-display-rsvp>
+
+      <div *ngSwitchDefault>Bloc Error {{bloc.type}}</div>
+    </ng-container>
+  </ng-container>
+</ng-container>
+<app-wc-counters></app-wc-counters>
+
+<div observeVisibility (visible)="count = count+1" style="padding-top:10px;"> 
+</div>

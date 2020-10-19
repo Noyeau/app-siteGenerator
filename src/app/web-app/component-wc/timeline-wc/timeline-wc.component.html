@@ -1,0 +1,24 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>{{bloc?.type}}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-reorder-group disabled="false" (ionItemReorder)="doReorder($event)">
+    <ion-item *ngFor="let item of bloc.data">
+
+      <ion-label position="floating">Date</ion-label>
+      <ion-datetime [(ngModel)]="item.date" display-timezone="utc"></ion-datetime>
+
+
+      <ion-label position="floating">Titre</ion-label>
+      <ion-input [(ngModel)]="item.title"></ion-input>
+
+      <ion-label position="floating">Description</ion-label>
+      <ion-textarea [(ngModel)]="item.description"></ion-textarea>
+      <ion-reorder slot="end"></ion-reorder>
+
+    </ion-item>
+  </ion-reorder-group>
+  </ion-card-content>
+</ion-card>

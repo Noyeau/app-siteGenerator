@@ -1,0 +1,27 @@
+<ng-container *ngIf="menu">
+
+  <ng-container *ngIf="menu.style.type == 'fab'">
+    <ion-fab [vertical]="menu?.style?.position.split('-')[0] || 'top'"
+      [horizontal]="menu?.style?.position?.split('-')[1] || 'start'" slot="fixed">
+      <ion-fab-button color="light">
+        <ion-icon [name]="menu?.style?.icon"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list [side]="menu?.style?.position.split('-')[2] || 'end'">
+        <ion-button *ngFor="let page of menu.pages" [routerLink]="page.route">{{page.title}}<ion-icon name="logo-vimeo">
+          </ion-icon>
+        </ion-button>
+
+        <!-- <ion-button>Page 2<ion-icon name="logo-facebook"></ion-icon>
+      </ion-button>
+
+      <ion-fab-button>
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-fab-button>
+
+      <ion-fab-button>
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-fab-button> -->
+      </ion-fab-list>
+    </ion-fab>
+  </ng-container>
+</ng-container>

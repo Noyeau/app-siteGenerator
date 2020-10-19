@@ -1,0 +1,15 @@
+<ng-container *ngIf="ready && getPage()">
+  <app-menu></app-menu>
+  <ion-content>
+
+
+
+    <app-bloc-display [blocs]="getPage()?.blocs"></app-bloc-display>
+
+
+
+  </ion-content>
+</ng-container>
+
+
+

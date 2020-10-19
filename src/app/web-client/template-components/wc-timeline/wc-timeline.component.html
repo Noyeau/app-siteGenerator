@@ -1,0 +1,66 @@
+<h1 *ngIf="title">{{title}}</h1>
+
+<ul class="timeline animate-box fadeInUp animated-fast">
+  <li class="animate-box fadeInUp animated-fast"  *ngFor="let item of data; let i = index; let odd = odd" [class.timeline-inverted]="odd">
+    <div class="timeline-badge" style="background-image:url(https://demos.freehtml5.co/wedding/premium/images/couple-1.jpg)"></div>
+    <div class="timeline-panel">
+      <div class="timeline-heading">
+        <h3 class="timeline-title">{{item.title}}</h3><span class="date">{{item.date|date}}</span>
+      </div>
+      <div class="timeline-body">
+        <p>{{item.description}}</p>
+      </div>
+    </div>
+  </li>
+  <!-- <li class="timeline-inverted animate-box fadeInUp animated-fast">
+    <div class="timeline-badge" style="background-image:url(images/couple-2.jpg)"></div>
+    <div class="timeline-panel">
+      <div class="timeline-heading">
+        <h3 class="timeline-title">First Date</h3><span class="date">December 28, 2015</span>
+      </div>
+      <div class="timeline-body">
+        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
+          blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
+          ocean.</p>
+      </div>
+    </div>
+  </li>
+  <li class="animate-box fadeInUp animated-fast">
+    <div class="timeline-badge" style="background-image:url(images/couple-3.jpg)"></div>
+    <div class="timeline-panel">
+      <div class="timeline-heading">
+        <h3 class="timeline-title">In A Relationship</h3><span class="date">January 1, 2016</span>
+      </div>
+      <div class="timeline-body">
+        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
+          blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
+          ocean.</p>
+      </div>
+    </div>
+  </li> -->
+</ul>
+
+
+<!-- <section class="timeline" >
+
+
+
+  
+  <ul>
+    <li *ngFor="let item of data; let i = index">
+      <ion-card class="content">
+        <ion-card-header>
+          <ion-card-subtitle>{{item.date|date:"yyyy"}}</ion-card-subtitle>
+          <ion-card-title>{{item.title}}</ion-card-title>
+        </ion-card-header>
+ 
+        <ion-card-content>
+          {{item.description}}
+        </ion-card-content>
+      </ion-card>
+    </li>
+    
+  </ul>
+
+
+</section> -->

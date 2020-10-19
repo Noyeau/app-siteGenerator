@@ -1,0 +1,12 @@
+<ng-container *ngIf="masterBloc">
+  <h1>{{masterBloc.title}}</h1>
+  <h4>{{masterBloc.description}}</h4>
+
+  <ng-container *ngFor="let formItem of masterBloc.data">
+      <ng-container [ngSwitch]="formItem.type">
+        <app-input-rsvp class="bloc-site" *ngSwitchCase="'input'" [item]="formItem" (valueChange)="setValue(formItem.code, $event)" [userData]="getData(formItem.code)">
+        </app-input-rsvp>
+        <app-select-rsvp class="bloc-site" *ngSwitchCase="'select'" [item]="formItem" (valueChange)="setValue(formItem.code, $event)" [userData]="getData(formItem.code)"></app-select-rsvp>
+        <div *ngSwitchDefault>Bloc Error {{formItem.type}}</div>
+      </ng-container>
+  </ng-container>

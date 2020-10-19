@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>rsvp</ion-title>
+  </ion-toolbar>
+  <app-menu></app-menu>
+
+</ion-header>
+
+<ion-content>
+    <app-bloc-display [blocs]="getRsvpPage()?.blocs" [userData]="getRsvpUserData()"></app-bloc-display>
+</ion-content>
+<ion-footer>
+  <ion-button (click)="save()">Save</ion-button>
+</ion-footer>

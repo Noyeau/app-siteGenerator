@@ -1,0 +1,6 @@
+<ion-item>
+  <ion-label>{{item?.label}}</ion-label>
+  <ion-select [multiple]="multi" cancelText="Nah" okText="Okay!" [formControl]="controller">
+    <ion-select-option *ngFor="let elem of item?.list" value="{{elem.value}}">{{elem.label}}</ion-select-option>
+  </ion-select>
+</ion-item>

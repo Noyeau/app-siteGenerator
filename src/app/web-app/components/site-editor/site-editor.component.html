@@ -1,0 +1,53 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Edition du Site</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-item>
+      <ion-label>Selectionnez un Site</ion-label>
+      <ion-select placeholder="Select Site" [(ngModel)]="selectSiteCode">
+        <ng-container *ngFor="let site of siteWebs">
+          <ion-select-option [value]="site.code">{{site.title}}</ion-select-option>
+        </ng-container>
+      </ion-select>
+    </ion-item>
+
+    <ion-item *ngIf="selectSiteCode">
+      <ion-label  position="floating">Nom du site</ion-label>
+      <ion-input [(ngModel)]="getSite().title"></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="selectSiteCode">
+      <ion-label>Selectionnez une Page</ion-label>
+
+      <ion-select placeholder="Select page" [(ngModel)]="selectPageCode">
+        <ng-container *ngFor="let page of getSite()?.pages">
+          <ion-select-option [value]="page.code">{{page.title}}</ion-select-option>
+        </ng-container>
+      </ion-select>
+
+    </ion-item>
+
+  </ion-card-content>
+  <ion-button *ngIf="selectSiteCode && selectPageCode" style="width: 100%;" (click)="save()">SAVE</ion-button>
+</ion-card>
+
+
+
+
+<ng-container *ngIf="selectSiteCode && selectPageCode">
+
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Edition de la page : {{selectPageCode}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+
+  <app-page-editor [page]="getPage()"></app-page-editor>
+  </ion-card-content>
+  </ion-card>
+
+</ng-container>
